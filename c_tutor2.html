@@ -1,0 +1,170 @@
+<html>
+<head>
+<link href="tutor2.css" rel="stylesheet" type="text/css">
+<title id="t">C Tutorial</title>
+<link rel="icon" href="https://goo.gl/w8SElV" type="image">
+<script>
+function show(ID){
+	var v=document.getElementById("p1").innerHTML;
+	//document.write(v);
+	switch(ID)
+	{
+	case 'item1':{
+	var x=document.getElementById("p1").innerHTML;
+	document.getElementById("pp1").innerHTML=x;
+	document.title='C Overview';
+	document.getElementById("pp1").innerHTML=$('#item1').text;
+	break;
+	}
+	case 'item2':{
+	var x=document.getElementById("p2").innerHTML;
+	document.getElementById("pp1").innerHTML=x;
+	document.title='Program Structure';break;}
+	case 'item3':{
+	var x=document.getElementById("p3").innerHTML;
+	document.getElementById("pp1").innerHTML=x;
+	document.title='Data Types';break;}
+	case 'item4':{
+	var x=document.getElementById("p4").innerHTML;
+	document.getElementById("pp1").innerHTML=x;
+	document.title='Variables';break;}
+	default:
+	}
+	}
+</script>
+</head>
+<body>
+<div class="header">
+<div><img src="https://goo.gl/w8SElV"  width="20px" height="20px"/></div>
+<div><a href="c_tutor2.html"><h2>C tutorial</h2></a></div>
+</div>
+<table>
+<tr>
+<td valign="top">
+<div class="left">
+<a id="item1" onclick="show(this.id)"><div >C Overview</div></a>
+<a id="item2" onclick="show(this.id)"><div >Program Structure</div></a>
+<a id="item3" onclick="show(this.id)"><div>Data types</div></a>
+<a id="item4" onclick="show(this.id)"><div>Variables</div></a>
+</div>
+</td>
+<td valign="top" id="right" style="width:90%">
+<div class="Right">
+<pre id="pp1">Welcome to C tutorial</pre>
+<pre id="p1" style="Display:none">
+C is a general-purpose, high-level language that was originally developed by Dennis M. Ritchie to develop the UNIX operating system at Bell Labs. C was originally first implemented on the DEC PDP-11 computer in 1972.
+
+In 1978, Brian Kernighan and Dennis Ritchie produced the first publicly available description of C, now known as the K&R standard.
+
+The UNIX operating system, the C compiler, and essentially all UNIX application programs have been written in C. C has now become a widely used professional language for various reasons −
+
+Easy to learn
+Structured language
+It produces efficient programs
+It can handle low-level activities
+It can be compiled on a variety of computer platforms
+Facts about C
+
+C was invented to write an operating system called UNIX.
+C is a successor of B language which was introduced around the early 1970s.
+The language was formalized in 1988 by the American National Standard Institute (ANSI).
+The UNIX OS was totally written in C.
+Today C is the most widely used and popular System Programming Language.
+Most of the state-of-the-art software have been implemented using C.
+Today's most popular Linux OS and RDBMS MySQL have been written in C.
+</pre>
+<pre id="p2" style="display:none">
+
+
+Before we study the basic building blocks of the C programming language, let us look at a bare minimum C program structure so that we can take it as a reference in the upcoming chapters.
+
+Hello World Example
+
+A C program basically consists of the following parts −
+
+Preprocessor Commands
+Functions
+Variables
+Statements & Expressions
+Comments
+Let us look at a simple code that would print the words "Hello World" −
+
+#include <stdio.h>
+
+int main() {
+   /* my first program in C */
+   printf("Hello, World! \n");
+   
+   return 0;
+}
+Let us take a look at the various parts of the above program −
+
+The first line of the program #include <stdio.h> is a preprocessor command, which tells a C compiler to include stdio.h file before going to actual compilation.
+
+The next line int main() is the main function where the program execution begins.
+
+The next line /*...*/ will be ignored by the compiler and it has been put to add additional comments in the program. So such lines are called comments in the program.
+
+The next line printf(...) is another function available in C which causes the message "Hello, World!" to be displayed on the screen.
+
+The next line return 0; terminates the main() function and returns the value 0.
+</pre>
+</div>
+</div>
+<pre id="p3" style="display:none">
+
+Data types in c refer to an extensive system used for declaring variables or functions of different types. The type of a variable determines how much space it occupies in storage and how the bit pattern stored is interpreted.
+
+The types in C can be classified as follows −
+
+S.N.	Types & Description
+1		Basic Types
+		They are arithmetic types and are further classified into: (a) integer types and (b) floating-point types.
+
+2		Enumerated types
+		They are again arithmetic types and they are used to define variables that can only assign certain discrete integer values throughout the program.
+		
+3		The type void
+		The type specifier void indicates that no value is available.
+
+4		Derived types
+		They include (a) Pointer types, (b) Array types, (c) Structure types, (d) Union types and (e) Function types.
+		The array types and structure types are referred collectively as the aggregate types. The type of a function specifies the type of the function's return value. We will see the basic types in the following section, where as other types will be covered in the upcoming chapters.
+</pre>
+<pre id="p4" style="display:none">
+A variable is nothing but a name given to a storage area that our programs can manipulate. Each variable in C has a specific type, which determines the size and layout of the variable's memory; the range of values that can be stored within that memory; and the set of operations that can be applied to the variable.
+
+The name of a variable can be composed of letters, digits, and the underscore character. It must begin with either a letter or an underscore. Upper and lowercase letters are distinct because C is case-sensitive. Based on the basic types explained in the previous chapter, there will be the following basic variable types −
+
+<u>Type</u>	<u>Description</u>
+char		Typically a single octet(one byte). This is an integer type.
+int		The most natural size of integer for the machine.
+float		A single-precision floating point value.
+double	A double-precision floating point value.
+void		Represents the absence of type.
+
+C programming language also allows to define various other types of variables, which we will cover in subsequent chapters like Enumeration, Pointer, Array, Structure, Union, etc. For this chapter, let us study only basic variable types.
+
+Variable Definition in C
+
+A variable definition tells the compiler where and how much storage to create for the variable. A variable definition specifies a data type and contains a list of one or more variables of that type as follows −
+
+type variable_list;
+Here, type must be a valid C data type including char, w_char, int, float, double, bool, or any user-defined object; and variable_list may consist of one or more identifier names separated by commas. Some valid declarations are shown here −
+
+int    i, j, k;
+char   c, ch;
+float  f, salary;
+double d;
+The line int i, j, k; declares and defines the variables i, j, and k; which instruct the compiler to create variables named i, j and k of type int.
+
+Variables can be initialized (assigned an initial value) in their declaration. The initializer consists of an equal sign followed by a constant expression as follows −
+
+type variable_name = value;
+</pre>
+</td>
+</tr>
+</table>
+</body>
+<footer> ©VamshiJupaka</footer>
+</html>
